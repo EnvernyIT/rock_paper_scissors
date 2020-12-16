@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock Paper Scissors</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <h1>Rock Paper Scissors Console Game</h1>
+    <script>
+            function computerPlay() {
+                let choices = ['rock', 'paper', 'scissors']
+                return choices[Math.floor(Math.random() * choices.length)]
+            }
+
+            function playRound(playerSelection) {
+                var playerWins = 0;
+                var computerWins = 0;
+                const computerSelection = computerPlay()
+                let result = ""
+                var MessageDraw = "It is a draw!"
+                var MessageWin = "You have won!"
+                var MessageLose = "You have lost"
+                var MessageWinner = "You have won the battle!"
+                var MessageLoser = "You have lost"
+                    if (playerSelection == computerSelection) {
+                        result = (MessageDraw + ' Player Selection: ' + playerSelection + ' And Computer Selection: ' + computerSelection + ' are equal.')
+                        playerWins++;
+                        return result
+                    }
+                    else if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
+                        (playerSelection == 'scissors' && computerSelection == 'paper') ||
+                        (playerSelection == 'paper' && computerSelection == 'rock')) {
+                        result = (MessageWin + ' ' + playerSelection + ' beats ' + computerSelection + '.')
+                        return result
+                    }
+                    else {
+                        result = (MessageLose + ' ' + playerSelection + ' does not beat ' + computerSelection + '.')
+                        computerWins++;
+                    }
+            }
+
+       console.log(playRound('rock'))
+       console.log(playRound('paper'))
+       console.log(playRound('scissors'))
+       console.log(playRound('scissors'))
+       console.log(playRound('rock'))
+       console.log(playRound('rock'))
+       console.log(playRound('rock'))
+       
+    </script>
+</body>
+
+</html>
